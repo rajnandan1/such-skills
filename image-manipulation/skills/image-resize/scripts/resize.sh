@@ -54,6 +54,35 @@ PRESETS=(
   "threads-profile:320:320:threads"
   "threads-square:1080:1080:threads"
   "threads-carousel:1080:1440:threads"
+  # Instagram
+  "instagram-feed-square:1080:1080:instagram"
+  "instagram-feed-portrait:1080:1350:instagram"
+  "instagram-stories:1080:1920:instagram"
+  "instagram-reels:1080:1920:instagram"
+  # Twitter
+  "twitter-one-image:2400:1350:twitter"
+  "twitter-two-images:2800:3200:twitter"
+  "twitter-cover-photo:2400:800:twitter"
+  "twitter-og:2400:1260:twitter"
+  # Dribbble
+  "dribbble-shot:2800:2100:dribbble"
+  # Bluesky
+  "bluesky-post:2400:1400:bluesky"
+  "bluesky-cover:2000:600:bluesky"
+  "bluesky-cover-mobile:1170:450:bluesky"
+  # Product Hunt
+  "producthunt-gallery:2540:1520:producthunt"
+  "producthunt-thumbnail:240:240:producthunt"
+  # LinkedIn
+  "linkedin-feed:1080:1080:linkedin"
+  "linkedin-cover-business:2256:382:linkedin"
+  "linkedin-cover-personal:1584:396:linkedin"
+  "linkedin-stories:1080:1920:linkedin"
+  # Facebook
+  "facebook-news-feed:1200:1200:facebook"
+  "facebook-stories:1080:1920:facebook"
+  "facebook-cover-photo:1660:624:facebook"
+  "facebook-og:2400:1260:facebook"
 )
 
 # ─── Dependency Check ──────────────────────────────────────────────
@@ -87,7 +116,7 @@ Options:
   --quality N       Output quality 1-100 (default: 92)
   --list            List all presets and exit
 
-Categories: web, chrome, ads, playstore, appstore, youtube, tiktok, pinterest, substack, threads
+Categories: web, chrome, ads, playstore, appstore, youtube, tiktok, pinterest, substack, threads, instagram, twitter, dribbble, bluesky, producthunt, linkedin, facebook
 EOF
   exit 0
 }
@@ -133,7 +162,7 @@ get_presets_by_category() {
   done
   if [[ $found -eq 0 ]]; then
     echo "Error: unknown category '$target_cat'" >&2
-    echo "Valid categories: web, chrome, ads, playstore, appstore, youtube, tiktok, pinterest, substack, threads" >&2
+    echo "Valid categories: web, chrome, ads, playstore, appstore, youtube, tiktok, pinterest, substack, threads, instagram, twitter, dribbble, bluesky, producthunt, linkedin, facebook" >&2
     exit 1
   fi
 }

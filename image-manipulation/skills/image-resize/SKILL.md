@@ -2,8 +2,9 @@
 name: image-resize
 description: >
   Resize and crop images to exact platform-specific dimensions for social media, app stores, ads, and web.
-  Supports 40+ platform presets including OG images, YouTube thumbnails, App Store screenshots, Play Store
-  graphics, TikTok, Pinterest, Threads, Substack, Chrome Web Store, Notion covers, and more.
+  Supports 60+ platform presets including OG images, YouTube thumbnails, App Store screenshots, Play Store
+  graphics, TikTok, Pinterest, Threads, Substack, Chrome Web Store, Notion covers, Instagram, Twitter,
+  Dribbble, Bluesky, Product Hunt, LinkedIn, Facebook, and more.
   Uses ImageMagick for high-quality Lanczos resampling. Works on macOS, Linux, and Windows.
   Use this skill whenever the user wants to resize an
   image for a specific platform, create social media assets, generate app store screenshots, make thumbnails,
@@ -15,7 +16,7 @@ description: >
 
 # Image Resize — Platform-Aware Image Resizer
 
-Resize and crop any image to exact dimensions for 40+ platform presets using ImageMagick's high-quality Lanczos resampling.
+Resize and crop any image to exact dimensions for 60+ platform presets using ImageMagick's high-quality Lanczos resampling.
 
 ## Prerequisites
 
@@ -63,6 +64,13 @@ The script knows these categories. For the full list of preset names and exact p
 | **Pinterest** | pinterest-profile, pinterest-board-cover, pinterest-square, pinterest-medium, pinterest-long |
 | **Substack** | substack-featured, substack-logo, substack-email-banner, substack-social, substack-cover |
 | **Threads** | threads-profile, threads-square, threads-carousel |
+| **Instagram** | instagram-feed-square, instagram-feed-portrait, instagram-stories, instagram-reels |
+| **Twitter** | twitter-one-image, twitter-two-images, twitter-cover-photo, twitter-og |
+| **Dribbble** | dribbble-shot |
+| **Bluesky** | bluesky-post, bluesky-cover, bluesky-cover-mobile |
+| **Product Hunt** | producthunt-gallery, producthunt-thumbnail |
+| **LinkedIn** | linkedin-feed, linkedin-cover-business, linkedin-cover-personal, linkedin-stories |
+| **Facebook** | facebook-news-feed, facebook-stories, facebook-cover-photo, facebook-og |
 
 ### Examples
 

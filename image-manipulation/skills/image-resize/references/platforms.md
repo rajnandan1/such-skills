@@ -91,3 +91,60 @@ All supported platform presets with exact dimensions and recommended use.
 | `threads-profile` | 320 x 320 px | Profile photo |
 | `threads-square` | 1080 x 1080 px | Square post image |
 | `threads-carousel` | 1080 x 1440 px | Carousel post image (3:4) |
+
+## Instagram
+
+| Preset | Dimensions | Use |
+|--------|-----------|-----|
+| `instagram-feed-square` | 1080 x 1080 px | Feed post — square |
+| `instagram-feed-portrait` | 1080 x 1350 px | Feed post — portrait (4:5) |
+| `instagram-stories` | 1080 x 1920 px | Stories (9:16) |
+| `instagram-reels` | 1080 x 1920 px | Reels cover/frame (9:16) |
+
+## Twitter
+
+| Preset | Dimensions | Use |
+|--------|-----------|-----|
+| `twitter-one-image` | 2400 x 1350 px | Single image tweet |
+| `twitter-two-images` | 2800 x 3200 px | Two-image tweet (each image) |
+| `twitter-cover-photo` | 2400 x 800 px | Profile cover/header photo |
+| `twitter-og` | 2400 x 1260 px | Open Graph card image |
+
+## Dribbble
+
+| Preset | Dimensions | Use |
+|--------|-----------|-----|
+| `dribbble-shot` | 2800 x 2100 px | Shot/project image (4:3) |
+
+## Bluesky
+
+| Preset | Dimensions | Use |
+|--------|-----------|-----|
+| `bluesky-post` | 2400 x 1400 px | Post image |
+| `bluesky-cover` | 2000 x 600 px | Profile cover (desktop) |
+| `bluesky-cover-mobile` | 1170 x 450 px | Profile cover (mobile) |
+
+## Product Hunt
+
+| Preset | Dimensions | Use |
+|--------|-----------|-----|
+| `producthunt-gallery` | 2540 x 1520 px | Product gallery image |
+| `producthunt-thumbnail` | 240 x 240 px | Product thumbnail |
+
+## LinkedIn
+
+| Preset | Dimensions | Use |
+|--------|-----------|-----|
+| `linkedin-feed` | 1080 x 1080 px | Feed post image |
+| `linkedin-cover-business` | 2256 x 382 px | Business page cover photo |
+| `linkedin-cover-personal` | 1584 x 396 px | Personal profile cover photo |
+| `linkedin-stories` | 1080 x 1920 px | Stories (9:16) |
+
+## Facebook
+
+| Preset | Dimensions | Use |
+|--------|-----------|-----|
+| `facebook-news-feed` | 1200 x 1200 px | News feed image |
+| `facebook-stories` | 1080 x 1920 px | Stories (9:16) |
+| `facebook-cover-photo` | 1660 x 624 px | Page/profile cover photo |
+| `facebook-og` | 2400 x 1260 px | Open Graph image |
