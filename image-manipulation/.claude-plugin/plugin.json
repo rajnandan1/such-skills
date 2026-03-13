@@ -1,6 +1,6 @@
 {
     "name": "image-manipulation",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Image manipulation tools: PNG-to-SVG vector conversion with potrace tracing, and platform-aware image resizing for 40+ social media, app store, and web presets.",
     "author": {
         "name": "Raj Nandan Sharma",
