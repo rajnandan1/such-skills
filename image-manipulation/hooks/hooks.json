@@ -1,0 +1,17 @@
+{
+  "description": "Validates image resize output dimensions after resize.sh runs",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/validate-resize.sh",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}

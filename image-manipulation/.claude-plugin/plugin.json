@@ -1,0 +1,28 @@
+{
+    "name": "image-manipulation",
+    "version": "1.1.0",
+    "description": "Image manipulation tools: PNG-to-SVG vector conversion with potrace tracing, and platform-aware image resizing for 40+ social media, app store, and web presets.",
+    "author": {
+        "name": "Raj Nandan Sharma",
+        "url": "https://rajnandan.com",
+        "email": "rajnandan1@gmail.com"
+    },
+    "homepage": "https://github.com/rajnandan1/such-skills/tree/main/image-manipulation",
+    "license": "MIT",
+    "keywords": [
+        "png",
+        "svg",
+        "vector",
+        "potrace",
+        "image-tracing",
+        "bitmap-to-vector",
+        "conversion",
+        "resize",
+        "crop",
+        "thumbnail",
+        "social-media",
+        "og-image",
+        "app-store",
+        "play-store"
+    ]
+}
