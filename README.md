@@ -14,10 +14,17 @@ claude plugin marketplace add rajnandan1/such-skills
 claude plugin install image-manipulation@such-skills
 ```
 
+## Update to latest version
+
+```bash
+claude plugin marketplace update such-skills
+claude plugin update image-manipulation
+```
+
 ## Plugins
 
-| Plugin | Description |
-|--------|-------------|
+| Plugin                                        | Description                                                                                   |
+| --------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | [**image-manipulation**](image-manipulation/) | PNG-to-SVG conversion, platform-aware image resizing (40+ presets), dimension validation hook |
 
 ## About
