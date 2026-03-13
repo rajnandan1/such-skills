@@ -25,7 +25,7 @@ claude plugin update image-manipulation
 
 | Plugin                                        | Description                                                                                   |
 | --------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| [**image-manipulation**](image-manipulation/) | PNG-to-SVG conversion, platform-aware image resizing (40+ presets), dimension validation hook |
+| [**image-manipulation**](image-manipulation/) | PNG-to-SVG conversion, platform-aware image resizing (60+ presets), lossless format conversion (PNG, JPG, WebP, TIFF, BMP, GIF, HEIC, AVIF), validation hooks |
 
 ## About
 

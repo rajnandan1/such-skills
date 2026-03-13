@@ -1,6 +1,6 @@
 {
     "name": "such-skills",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "A collection of useful Claude Code skills and plugins built by Raj Nandan Sharma.",
     "owner": {
         "name": "Raj Nandan Sharma",
@@ -10,7 +10,7 @@
     "plugins": [
         {
             "name": "image-manipulation",
-            "description": "Image manipulation tools: PNG-to-SVG vector conversion with potrace tracing, and platform-aware image resizing for 40+ social media, app store, and web presets.",
+            "description": "Image manipulation tools: PNG-to-SVG vector conversion, platform-aware image resizing for 60+ presets, and lossless image format conversion (PNG, JPG, WebP, TIFF, BMP, GIF, HEIC, AVIF).",
             "source": "./image-manipulation",
             "category": "utilities"
         }

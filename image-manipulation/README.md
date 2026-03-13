@@ -1,6 +1,6 @@
 # Image Manipulation Plugin for Claude Code
 
-> PNG-to-SVG vector conversion and platform-aware image resizing with 40+ presets. Resize, crop, and convert images without leaving your terminal.
+> PNG-to-SVG vector conversion, platform-aware image resizing with 60+ presets, and lossless image format conversion. Resize, crop, and convert images without leaving your terminal.
 
 ## Installation
 
@@ -90,6 +90,47 @@ bash <skill-path>/scripts/png2svg.sh detailed.png --threshold 60 --smoothness 1.
 | `--threshold N` | Grayscale threshold 0-100 | 50 |
 | `--smoothness N` | Curve smoothness 0-1.334 | 1.334 |
 
+### format-convert
+
+Convert images between PNG, JPG, WebP, TIFF, BMP, GIF, HEIC, and AVIF. Lossless by default — quality 100 with true lossless modes for WebP and AVIF. Handles alpha-to-no-alpha conversion automatically.
+
+**Usage:**
+
+```bash
+# PNG to JPG
+bash <skill-path>/scripts/convert.sh screenshot.png --to jpg
+
+# HEIC to PNG (iPhone photos)
+bash <skill-path>/scripts/convert.sh photo.heic --to png
+
+# PNG to WebP with custom quality
+bash <skill-path>/scripts/convert.sh banner.png --to webp --quality 90
+
+# Batch convert all images in a folder
+bash <skill-path>/scripts/convert.sh --batch ./images/ --to webp --output ./web-images/
+
+# Batch convert recursively
+bash <skill-path>/scripts/convert.sh --batch ./photos/ --to jpg --recursive
+
+# Transparent PNG to JPG with black background
+bash <skill-path>/scripts/convert.sh logo.png --to jpg --bg-color 000000
+
+# List supported formats
+bash <skill-path>/scripts/convert.sh --formats
+```
+
+**Options:**
+
+| Flag | Description | Default |
+|------|-------------|---------|
+| `--to FORMAT` | Target format (png, jpg, webp, tiff, bmp, gif, heic, avif) | (required) |
+| `--output DIR` | Output directory | `./converted/` |
+| `--quality N` | Quality for lossy formats 1-100 | `100` |
+| `--bg-color HEX` | Background color when removing alpha (no #) | `FFFFFF` |
+| `--batch DIR` | Convert all supported images in DIR | — |
+| `--recursive` | Include subdirectories in batch mode | off |
+| `--formats` | List supported formats and exit | — |
+
 ## Hooks
 
 ### validate-resize
@@ -107,6 +148,22 @@ Resize validation failed (3 files checked):
 MISMATCH: youtube-profile.png — expected 800x800, got 500x300
 ```
 
+### validate-conversion
+
+A PostToolUse hook that automatically validates converted images after every format conversion. Activates when the plugin is installed.
+
+**What it checks:**
+- Output files exist and are valid images
+- Dimensions are preserved (format conversion should not alter size)
+- Reports errors back to Claude so it can retry or alert you
+
+**Example output on failure:**
+```
+Conversion validation failed (2 files checked):
+MISSING: ./converted/photo.jpg
+DIMENSION_CHANGE: ./converted/banner.webp — expected 1920x1080, got 960x540
+```
+
 ## Examples
 
 Ask Claude naturally:
@@ -121,13 +178,22 @@ I need YouTube assets — profile, cover, and thumbnail from this channel-art.pn
 resize screenshot.png for all App Store iPhone sizes, use fit mode with black padding
 ```
 ```
-generate all 40 platform sizes from brand-logo.png
+generate all 60 platform sizes from brand-logo.png
 ```
 ```
 convert my company logo.png to a scalable SVG
 ```
 ```
 vectorize this icon.png — it's a single dark color on white
+```
+```
+convert my screenshot.png to jpg
+```
+```
+batch convert all HEIC photos in ~/Photos to PNG
+```
+```
+save this image as webp
 ```
 
 ## License
