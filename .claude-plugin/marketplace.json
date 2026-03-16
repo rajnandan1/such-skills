@@ -1,6 +1,6 @@
 {
     "name": "such-skills",
-    "version": "1.1.2",
+    "version": "1.2.0",
     "description": "A collection of useful Claude Code skills and plugins built by Raj Nandan Sharma.",
     "owner": {
         "name": "Raj Nandan Sharma",
@@ -13,6 +13,12 @@
             "description": "Image manipulation tools: PNG-to-SVG vector conversion, platform-aware image resizing for 60+ presets, and lossless image format conversion (PNG, JPG, WebP, TIFF, BMP, GIF, HEIC, AVIF).",
             "source": "./image-manipulation",
             "category": "utilities"
+        },
+        {
+            "name": "svelte-coding",
+            "description": "Svelte development tools: shadcn-svelte component detection and documentation for building accessible UIs in SvelteKit projects.",
+            "source": "./svelte-coding",
+            "category": "frameworks"
         }
     ]
 }

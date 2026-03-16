@@ -1,0 +1,27 @@
+{
+    "name": "svelte-coding",
+    "version": "1.0.0",
+    "description": "Svelte development tools: shadcn-svelte component detection and documentation for building accessible, beautiful UIs in SvelteKit projects.",
+    "author": {
+        "name": "Raj Nandan Sharma",
+        "url": "https://rajnandan.com",
+        "email": "rajnandan1@gmail.com"
+    },
+    "homepage": "https://github.com/rajnandan1/such-skills/tree/main/svelte-coding",
+    "license": "MIT",
+    "keywords": [
+        "svelte",
+        "sveltekit",
+        "shadcn",
+        "shadcn-svelte",
+        "bits-ui",
+        "components",
+        "ui",
+        "accessible",
+        "tailwind",
+        "forms",
+        "dialog",
+        "table",
+        "chart"
+    ]
+}
