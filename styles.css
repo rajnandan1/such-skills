@@ -75,7 +75,7 @@ nav.hidden{transform:translateY(-100%)}
   padding:4px 0;
 }
 .nav-logo-img{width:24px;height:24px;flex-shrink:0}
-.nav-links{display:flex;gap:4px;font-size:.875rem}
+.nav-links{display:flex;gap:4px;font-size:.875rem;list-style:none}
 .nav-links a{
   color:var(--text-dim);padding:6px 12px;border-radius:6px;
   transition:color .2s var(--ease-out-soft),background-color .2s var(--ease-out-soft);
@@ -178,19 +178,15 @@ section{padding:96px 24px}
   transition:border-color .3s var(--ease-out-soft),transform .3s var(--ease-out);
 }
 .plugin-card:hover{border-color:var(--border-hover);transform:translateY(-2px)}
-.plugin-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  border-radius:var(--radius-lg) var(--radius-lg) 0 0;
-  opacity:.7;
-}
-.plugin-card.img::before{background:linear-gradient(90deg,var(--accent-img),#9b7ab8)}
-.plugin-card.svelte::before{background:linear-gradient(90deg,var(--accent-svelte),#c06830)}
 .plugin-icon{
   width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;
   font-size:1.3rem;margin-bottom:18px;
+  transition:box-shadow .3s var(--ease-out-soft);
 }
 .plugin-card.img .plugin-icon{background:var(--accent-img-dim);color:var(--accent-img)}
 .plugin-card.svelte .plugin-icon{background:var(--accent-svelte-dim);color:var(--accent-svelte)}
+.plugin-card.img:hover .plugin-icon{box-shadow:0 0 20px var(--accent-img-dim),0 0 40px rgba(212,120,158,.06)}
+.plugin-card.svelte:hover .plugin-icon{box-shadow:0 0 20px var(--accent-svelte-dim),0 0 40px rgba(217,78,31,.06)}
 .plugin-card h3{font-size:1.25rem;font-weight:400;line-height:1.2;margin-bottom:8px}
 .plugin-card .plugin-desc{color:var(--text-dim);font-size:.875rem;line-height:1.65;margin-bottom:20px}
 .plugin-meta{display:flex;gap:10px;flex-wrap:wrap}
@@ -264,13 +260,13 @@ section{padding:96px 24px}
 .install-cmd:hover{border-color:var(--border-hover)}
 .install-cmd .prompt{color:var(--accent-blue);user-select:none;opacity:.7}
 .install-cmd .cmd-text{flex:1;color:var(--text)}
-.install-cmd .copy-btn{
-  background:none;border:none;color:var(--text-dim);cursor:pointer;
-  padding:6px;border-radius:6px;display:flex;align-items:center;justify-content:center;
-  transition:color .2s var(--ease-out-soft),background-color .2s var(--ease-out-soft);
-  min-width:28px;min-height:28px;
+.install-cmd .copy-indicator{
+  color:var(--text-dim);
+  display:flex;align-items:center;justify-content:center;
+  min-width:28px;min-height:28px;flex-shrink:0;
+  transition:color .2s var(--ease-out-soft);
 }
-.install-cmd .copy-btn:hover{color:var(--text);background:var(--surface-2)}
+.install-cmd:hover .copy-indicator{color:var(--text)}
 .install-method-label{
   font-size:.75rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
   color:var(--text-dim);text-align:left;margin-bottom:8px;
@@ -288,7 +284,6 @@ section{padding:96px 24px}
   padding:9px 18px;border-radius:8px;font-size:.875rem;font-weight:500;
   background:var(--surface);border:1px solid var(--border);color:var(--text-dim);
   transition:border-color .25s var(--ease-out-soft),color .25s var(--ease-out-soft);
-  cursor:default;
 }
 .format-chip:hover{border-color:var(--border-active);color:var(--text)}
 

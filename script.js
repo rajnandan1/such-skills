@@ -1,12 +1,17 @@
 (function(){
   'use strict';
 
-  // -- Nav hide on scroll --
+  // -- Nav hide on scroll (with state guard) --
   var lastY=0;
+  var navHidden=false;
   var nav=document.getElementById('nav');
   window.addEventListener('scroll',function(){
     var y=window.scrollY;
-    nav.classList.toggle('hidden',y>lastY&&y>80);
+    var shouldHide=y>lastY&&y>80;
+    if(shouldHide!==navHidden){
+      navHidden=shouldHide;
+      nav.classList.toggle('hidden',navHidden);
+    }
     lastY=y;
   },{passive:true});
 
@@ -18,7 +23,7 @@
   },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});
 
-  // -- Marquee (safe DOM creation) --
+  // -- Marquee (batched DOM insertion) --
   var platforms=[
     'YouTube Thumbnail','YouTube Banner','TikTok Video',
     'Instagram Post','Instagram Story','Instagram Reel',
@@ -32,24 +37,31 @@
     'Notion Cover','OG Image','Favicon'
   ];
   var marqueeEl=document.getElementById('marquee');
+  var frag=document.createDocumentFragment();
   var doubled=platforms.concat(platforms);
   doubled.forEach(function(name){
     var chip=document.createElement('div');
     chip.className='platform-chip';
     chip.textContent=name;
-    marqueeEl.appendChild(chip);
+    frag.appendChild(chip);
   });
+  marqueeEl.appendChild(frag);
 
-  // -- Copy command (safe DOM, keyboard accessible) --
-  function createCopyIcon(){
+  // -- SVG icon helpers --
+  function createSvg(stroke,strokeWidth){
     var svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
     svg.setAttribute('width','16');
     svg.setAttribute('height','16');
     svg.setAttribute('fill','none');
-    svg.setAttribute('stroke','currentColor');
-    svg.setAttribute('stroke-width','2');
+    svg.setAttribute('stroke',stroke);
+    svg.setAttribute('stroke-width',strokeWidth);
     svg.setAttribute('viewBox','0 0 24 24');
     svg.setAttribute('aria-hidden','true');
+    return svg;
+  }
+
+  function createCopyIcon(){
+    var svg=createSvg('currentColor','2');
     var rect=document.createElementNS('http://www.w3.org/2000/svg','rect');
     rect.setAttribute('x','9');rect.setAttribute('y','9');
     rect.setAttribute('width','13');rect.setAttribute('height','13');
@@ -61,14 +73,7 @@
   }
 
   function createCheckIcon(){
-    var svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
-    svg.setAttribute('width','16');
-    svg.setAttribute('height','16');
-    svg.setAttribute('fill','none');
-    svg.setAttribute('stroke','#34d399');
-    svg.setAttribute('stroke-width','2.5');
-    svg.setAttribute('viewBox','0 0 24 24');
-    svg.setAttribute('aria-hidden','true');
+    var svg=createSvg('#34d399','2.5');
     var path=document.createElementNS('http://www.w3.org/2000/svg','path');
     path.setAttribute('d','M20 6L9 17l-5-5');
     svg.appendChild(path);
@@ -86,25 +91,27 @@
 
   function handleCopy(cmdEl){
     var text=cmdEl.querySelector('.cmd-text').textContent;
-    var btn=cmdEl.querySelector('.copy-btn');
+    var btn=cmdEl.querySelector('.copy-indicator');
     navigator.clipboard.writeText(text).then(function(){
-      // Icon swap
-      while(btn.firstChild)btn.removeChild(btn.firstChild);
-      btn.appendChild(createCheckIcon());
-      setTimeout(function(){
-        while(btn.firstChild)btn.removeChild(btn.firstChild);
-        btn.appendChild(createCopyIcon());
-      },2000);
-      // Green border flash
+      btn.replaceChildren(createCheckIcon());
+      setTimeout(function(){btn.replaceChildren(createCopyIcon());},2000);
       cmdEl.classList.add('copied');
       setTimeout(function(){cmdEl.classList.remove('copied');},600);
-      // Toast
       showToast();
+    }).catch(function(){
+      // Fallback: select text for manual copy
+      var range=document.createRange();
+      range.selectNodeContents(cmdEl.querySelector('.cmd-text'));
+      var sel=window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
     });
   }
 
-  function setupCopyBtn(cmdEl){
-    if(!cmdEl)return;
+  // -- Setup all copy buttons (inject icons from JS) --
+  document.querySelectorAll('.install-cmd').forEach(function(cmdEl){
+    var indicator=cmdEl.querySelector('.copy-indicator');
+    if(indicator)indicator.replaceChildren(createCopyIcon());
     cmdEl.addEventListener('click',function(){handleCopy(cmdEl);});
     cmdEl.addEventListener('keydown',function(e){
       if(e.key==='Enter'||e.key===' '){
@@ -112,16 +119,7 @@
         handleCopy(cmdEl);
       }
     });
-  }
-
-  setupCopyBtn(document.getElementById('cmd1'));
-  setupCopyBtn(document.getElementById('cmd2'));
-  setupCopyBtn(document.getElementById('cmd3'));
-  setupCopyBtn(document.getElementById('cmd4'));
-  setupCopyBtn(document.getElementById('cmd5'));
-  setupCopyBtn(document.getElementById('cmd6'));
-  setupCopyBtn(document.getElementById('cmd7'));
-  setupCopyBtn(document.getElementById('cmd8'));
+  });
 
   // -- Stat counter animation --
   var reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -132,20 +130,17 @@
         statObs.disconnect();
         statNums.forEach(function(el,i){
           var raw=el.textContent.trim();
-          var suffix=raw.replace(/[0-9]/g,''); // e.g. "+"
+          var suffix=raw.replace(/[0-9]/g,'');
           var target=parseInt(raw,10);
           if(isNaN(target))return;
-          var start=0;
           var duration=800;
           var delay=i*120;
           setTimeout(function(){
             var t0=performance.now();
             function tick(now){
               var p=Math.min((now-t0)/duration,1);
-              // ease-out-quart
               var ep=1-Math.pow(1-p,4);
-              var val=Math.round(start+(target-start)*ep);
-              el.textContent=val+suffix;
+              el.textContent=Math.round(target*ep)+suffix;
               if(p<1)requestAnimationFrame(tick);
             }
             requestAnimationFrame(tick);
