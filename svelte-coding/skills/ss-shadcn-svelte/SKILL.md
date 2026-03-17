@@ -1,5 +1,5 @@
 ---
-name: shadcn-svelte
+name: ss-shadcn-svelte
 description: >
   Use shadcn-svelte components in SvelteKit projects. Detects whether the current project is a SvelteKit
   app with shadcn-svelte installed, lists available components, and provides access to full component

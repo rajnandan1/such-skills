@@ -1,5 +1,5 @@
 ---
-name: image-resize
+name: ss-image-resize
 description: >
   Resize and crop images to exact platform-specific dimensions for social media, app stores, ads, and web.
   Supports 60+ platform presets including OG images, YouTube thumbnails, App Store screenshots, Play Store

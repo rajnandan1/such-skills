@@ -6,12 +6,12 @@
 
 ```bash
 claude plugin marketplace add rajnandan1/such-skills
-claude plugin install svelte-coding@such-skills
+claude plugin install ss-svelte-coding@such-skills
 ```
 
 ## Skills
 
-### shadcn-svelte
+### ss-shadcn-svelte
 
 Detects whether your project is a SvelteKit app with shadcn-svelte installed, lists installed components, and provides access to full component documentation so the assistant uses the right components for the job.
 

@@ -1,5 +1,5 @@
 ---
-name: format-convert
+name: ss-format-convert
 description: >
   Convert images between formats: PNG, JPG/JPEG, WebP, TIFF, BMP, GIF, HEIC, and AVIF.
   Performs high-quality lossless conversion by default. Handles alpha channel transparency

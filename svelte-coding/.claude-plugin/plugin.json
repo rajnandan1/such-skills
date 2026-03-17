@@ -1,5 +1,5 @@
 {
-    "name": "svelte-coding",
+    "name": "ss-svelte-coding",
     "version": "1.0.0",
     "description": "Svelte development tools: shadcn-svelte component detection and documentation for building accessible, beautiful UIs in SvelteKit projects.",
     "author": {

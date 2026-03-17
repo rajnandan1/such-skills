@@ -6,12 +6,12 @@
 
 ```bash
 claude plugin marketplace add rajnandan1/such-skills
-claude plugin install image-manipulation@such-skills
+claude plugin install ss-image-manipulation@such-skills
 ```
 
 ## Skills
 
-### image-resize
+### ss-image-resize
 
 Resize and crop images to exact platform dimensions using ImageMagick's Lanczos resampling. Supports **cover-crop** (fill) and **fit** (letterbox with padding) modes.
 
@@ -61,7 +61,7 @@ bash <skill-path>/scripts/resize.sh --list
 | **Substack** | substack-featured (1456x1048), substack-logo (256x256), substack-email-banner (1100x220), substack-social (1456x1048), substack-cover (600x600) |
 | **Threads** | threads-profile (320x320), threads-square (1080x1080), threads-carousel (1080x1440) |
 
-### png-to-svg
+### ss-png-to-svg
 
 Convert raster PNG images into smooth, clean SVG vector files. Traces bitmap images using potrace's bezier curves with multi-color support.
 
@@ -90,7 +90,7 @@ bash <skill-path>/scripts/png2svg.sh detailed.png --threshold 60 --smoothness 1.
 | `--threshold N` | Grayscale threshold 0-100 | 50 |
 | `--smoothness N` | Curve smoothness 0-1.334 | 1.334 |
 
-### format-convert
+### ss-format-convert
 
 Convert images between PNG, JPG, WebP, TIFF, BMP, GIF, HEIC, and AVIF. Lossless by default — quality 100 with true lossless modes for WebP and AVIF. Handles alpha-to-no-alpha conversion automatically.
 

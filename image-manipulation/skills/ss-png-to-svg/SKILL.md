@@ -1,5 +1,5 @@
 ---
-name: png-to-svg
+name: ss-png-to-svg
 description: >
   Convert PNG images to smooth, scalable SVG vector files using potrace tracing.
   Supports multi-color PNGs (logos, icons, illustrations) by extracting dominant colors

@@ -1,5 +1,5 @@
 {
-    "name": "image-manipulation",
+    "name": "ss-image-manipulation",
     "version": "1.1.2",
     "description": "Image manipulation tools: PNG-to-SVG vector conversion, platform-aware image resizing for 60+ social media, app store, and web presets, and lossless image format conversion between PNG, JPG, WebP, TIFF, BMP, GIF, HEIC, and AVIF.",
     "author": {
