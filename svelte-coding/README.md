@@ -4,6 +4,14 @@
 
 ## Installation
 
+### Quick install (npx)
+
+```bash
+npx skills add rajnandan1/such-skills/ss-svelte-coding
+```
+
+### Claude Code (CLI)
+
 ```bash
 claude plugin marketplace add rajnandan1/such-skills
 claude plugin install ss-svelte-coding@such-skills

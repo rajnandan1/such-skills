@@ -104,6 +104,7 @@
   }
 
   function setupCopyBtn(cmdEl){
+    if(!cmdEl)return;
     cmdEl.addEventListener('click',function(){handleCopy(cmdEl);});
     cmdEl.addEventListener('keydown',function(e){
       if(e.key==='Enter'||e.key===' '){
@@ -115,102 +116,15 @@
 
   setupCopyBtn(document.getElementById('cmd1'));
   setupCopyBtn(document.getElementById('cmd2'));
-
-  // -- Hero interactive dot grid --
-  var reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(!reducedMotion){
-    var canvas=document.getElementById('heroGrid');
-    if(canvas){
-      var ctx=canvas.getContext('2d');
-      var dpr=window.devicePixelRatio||1;
-      var gap=40; // spacing between dots
-      var baseRadius=1;
-      var maxRadius=2.5;
-      var glowRadius=180; // how far the cursor glow reaches
-      var mouseX=-9999,mouseY=-9999;
-      var isHovering=false;
-      var cols,rows;
-
-      function resize(){
-        var rect=canvas.parentElement.getBoundingClientRect();
-        canvas.width=rect.width*dpr;
-        canvas.height=rect.height*dpr;
-        canvas.style.width=rect.width+'px';
-        canvas.style.height=rect.height+'px';
-        ctx.setTransform(dpr,0,0,dpr,0,0);
-        cols=Math.ceil(rect.width/gap)+1;
-        rows=Math.ceil(rect.height/gap)+1;
-      }
-      resize();
-      window.addEventListener('resize',function(){resize();if(gridVisible)requestAnimationFrame(draw);});
-
-      var hero=canvas.parentElement;
-      hero.addEventListener('mousemove',function(e){
-        var rect=canvas.getBoundingClientRect();
-        mouseX=e.clientX-rect.left;
-        mouseY=e.clientY-rect.top;
-        if(!isHovering){
-          isHovering=true;
-          if(gridVisible) requestAnimationFrame(draw);
-        }
-      });
-      hero.addEventListener('mouseleave',function(){
-        isHovering=false;
-        mouseX=-9999;mouseY=-9999;
-        // Draw one final frame showing base state
-        if(gridVisible) requestAnimationFrame(draw);
-      });
-
-      // Colors
-      var baseDot={r:142,g:142,b:163}; // --text-dim approx
-      var glowDot={r:212,g:175,b:120}; // warm golden
-
-      function draw(){
-        ctx.clearRect(0,0,canvas.width/dpr,canvas.height/dpr);
-        var w=canvas.width/dpr;
-        var h=canvas.height/dpr;
-        // offset grid to center
-        var ox=(w%gap)/2;
-        var oy=(h%gap)/2;
-
-        for(var row=0;row<rows;row++){
-          for(var col=0;col<cols;col++){
-            var x=ox+col*gap;
-            var y=oy+row*gap;
-            var dx=x-mouseX;
-            var dy=y-mouseY;
-            var dist=Math.sqrt(dx*dx+dy*dy);
-            var t=Math.max(0,1-dist/glowRadius);
-            // ease the falloff
-            t=t*t*t;
-
-            var r=baseRadius+t*(maxRadius-baseRadius);
-            var cr=baseDot.r+t*(glowDot.r-baseDot.r);
-            var cg=baseDot.g+t*(glowDot.g-baseDot.g);
-            var cb=baseDot.b+t*(glowDot.b-baseDot.b);
-            var alpha=0.12+t*0.6;
-
-            ctx.beginPath();
-            ctx.arc(x,y,r,0,Math.PI*2);
-            ctx.fillStyle='rgba('+Math.round(cr)+','+Math.round(cg)+','+Math.round(cb)+','+alpha.toFixed(2)+')';
-            ctx.fill();
-          }
-        }
-        // Keep animating only while hovering
-        if(isHovering&&gridVisible) requestAnimationFrame(draw);
-      }
-
-      // Track visibility, draw static grid when entering viewport
-      var gridVisible=false;
-      var gridObs=new IntersectionObserver(function(entries){
-        gridVisible=entries[0].isIntersecting;
-        if(gridVisible) requestAnimationFrame(draw);
-      },{threshold:0});
-      gridObs.observe(hero);
-    }
-  }
+  setupCopyBtn(document.getElementById('cmd3'));
+  setupCopyBtn(document.getElementById('cmd4'));
+  setupCopyBtn(document.getElementById('cmd5'));
+  setupCopyBtn(document.getElementById('cmd6'));
+  setupCopyBtn(document.getElementById('cmd7'));
+  setupCopyBtn(document.getElementById('cmd8'));
 
   // -- Stat counter animation --
+  var reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var statNums=document.querySelectorAll('.stat-num');
   if(statNums.length&&!reducedMotion){
     var statObs=new IntersectionObserver(function(entries){

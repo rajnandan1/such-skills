@@ -4,6 +4,13 @@
 
 ## Installation
 
+### Quick install (npx)
+
+```bash
+npx skills add rajnandan1/such-skills/ss-image-manipulation
+npx skills add rajnandan1/such-skills/ss-svelte-coding
+```
+
 ### Claude Code (CLI)
 
 ```bash
@@ -19,8 +26,8 @@ claude plugin install ss-svelte-coding@such-skills
 
 ```bash
 claude plugin marketplace update such-skills
-claude plugin update ss-image-manipulation
-claude plugin update ss-svelte-coding
+claude plugin update ss-image-manipulation@such-skills
+claude plugin update ss-svelte-coding@such-skills
 ```
 
 ## Plugins

@@ -27,6 +27,7 @@
       <a href="#plugins">Plugins</a>
       <a href="#skills">Skills</a>
       <a href="#formats">Formats</a>
+      <a href="#usage">Usage</a>
       <a href="#install">Install</a>
     </div>
     <a href="https://github.com/rajnandan1/such-skills" target="_blank" rel="noopener noreferrer" class="nav-gh" aria-label="View on GitHub">
@@ -41,8 +42,6 @@
 
 <!-- HERO -->
 <section class="hero" aria-labelledby="hero-title">
-  <!-- Interactive dot grid background -->
-  <canvas class="hero-grid" id="heroGrid" aria-hidden="true"></canvas>
   <!-- Floating logo -->
   <div class="hero-logo-float" aria-hidden="true">
     <img src="logo.svg" alt="" width="80" height="80" class="hero-logo-img">
@@ -193,27 +192,99 @@
   </div>
 </section>
 
+<!-- USAGE -->
+<section id="usage" aria-labelledby="usage-title">
+  <div class="section-inner" style="text-align:center">
+    <div class="section-label" style="color:var(--accent-green)">Usage</div>
+    <h2 id="usage-title" class="section-title reveal" style="margin-left:auto;margin-right:auto">Run as slash commands.</h2>
+    <p class="section-desc reveal" style="margin-left:auto;margin-right:auto">Use skills directly in Claude Code with slash commands. Just type and go.</p>
+    <div class="usage-examples reveal">
+      <div class="usage-card">
+        <div class="usage-label">Resize for LinkedIn</div>
+        <code class="usage-cmd">/ss-image-manipulation:ss-image-resize image.png linkedin-cover</code>
+      </div>
+      <div class="usage-card">
+        <div class="usage-label">Convert PNG to SVG</div>
+        <code class="usage-cmd">/ss-image-manipulation:ss-png-to-svg logo.png logo.svg</code>
+      </div>
+      <div class="usage-card">
+        <div class="usage-label">Convert to WebP</div>
+        <code class="usage-cmd">/ss-image-manipulation:ss-format-convert photo.png --to webp</code>
+      </div>
+      <div class="usage-card">
+        <div class="usage-label">Detect shadcn components</div>
+        <code class="usage-cmd">/ss-svelte-coding:ss-shadcn-svelte</code>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- INSTALL -->
 <section id="install" aria-labelledby="install-title">
   <div class="section-inner">
     <div class="install-box reveal">
       <h3 id="install-title">Get started in seconds</h3>
-      <p>Install the plugins from the Claude Code marketplace.</p>
-      <div class="install-cmd" id="cmd1" role="button" tabindex="0" aria-label="Copy install command for ss-image-manipulation plugin">
+      <p>Install directly with npx or via the Claude Code marketplace.</p>
+      <div class="install-method-label">npx (quickest)</div>
+      <div class="install-cmd" id="cmd1" role="button" tabindex="0" aria-label="Copy npx install command for ss-image-manipulation">
         <span class="prompt" aria-hidden="true">$</span>
-        <span class="cmd-text">claude plugins:install such-skills/ss-image-manipulation</span>
+        <span class="cmd-text">npx skills add rajnandan1/such-skills/ss-image-manipulation</span>
         <button class="copy-btn" title="Copy to clipboard" aria-label="Copy to clipboard" tabindex="-1">
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
         </button>
       </div>
-      <div class="install-cmd" id="cmd2" role="button" tabindex="0" aria-label="Copy install command for ss-svelte-coding plugin">
+      <div class="install-cmd" id="cmd2" role="button" tabindex="0" aria-label="Copy npx install command for ss-svelte-coding">
         <span class="prompt" aria-hidden="true">$</span>
-        <span class="cmd-text">claude plugins:install such-skills/ss-svelte-coding</span>
+        <span class="cmd-text">npx skills add rajnandan1/such-skills/ss-svelte-coding</span>
         <button class="copy-btn" title="Copy to clipboard" aria-label="Copy to clipboard" tabindex="-1">
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
         </button>
       </div>
-      <div class="install-note">Requires Claude Code CLI</div>
+      <div class="install-method-label">Claude Code CLI</div>
+      <div class="install-cmd" id="cmd3" role="button" tabindex="0" aria-label="Copy marketplace add command">
+        <span class="prompt" aria-hidden="true">$</span>
+        <span class="cmd-text">claude plugin marketplace add rajnandan1/such-skills</span>
+        <button class="copy-btn" title="Copy to clipboard" aria-label="Copy to clipboard" tabindex="-1">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        </button>
+      </div>
+      <div class="install-cmd" id="cmd4" role="button" tabindex="0" aria-label="Copy install command for ss-image-manipulation">
+        <span class="prompt" aria-hidden="true">$</span>
+        <span class="cmd-text">claude plugin install ss-image-manipulation@such-skills</span>
+        <button class="copy-btn" title="Copy to clipboard" aria-label="Copy to clipboard" tabindex="-1">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        </button>
+      </div>
+      <div class="install-cmd" id="cmd5" role="button" tabindex="0" aria-label="Copy install command for ss-svelte-coding">
+        <span class="prompt" aria-hidden="true">$</span>
+        <span class="cmd-text">claude plugin install ss-svelte-coding@such-skills</span>
+        <button class="copy-btn" title="Copy to clipboard" aria-label="Copy to clipboard" tabindex="-1">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        </button>
+      </div>
+      <div class="install-method-label">Update</div>
+      <div class="install-cmd" id="cmd6" role="button" tabindex="0" aria-label="Copy marketplace update command">
+        <span class="prompt" aria-hidden="true">$</span>
+        <span class="cmd-text">claude plugin marketplace update such-skills</span>
+        <button class="copy-btn" title="Copy to clipboard" aria-label="Copy to clipboard" tabindex="-1">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        </button>
+      </div>
+      <div class="install-cmd" id="cmd7" role="button" tabindex="0" aria-label="Copy update command for ss-image-manipulation">
+        <span class="prompt" aria-hidden="true">$</span>
+        <span class="cmd-text">claude plugin update ss-image-manipulation@such-skills</span>
+        <button class="copy-btn" title="Copy to clipboard" aria-label="Copy to clipboard" tabindex="-1">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        </button>
+      </div>
+      <div class="install-cmd" id="cmd8" role="button" tabindex="0" aria-label="Copy update command for ss-svelte-coding">
+        <span class="prompt" aria-hidden="true">$</span>
+        <span class="cmd-text">claude plugin update ss-svelte-coding@such-skills</span>
+        <button class="copy-btn" title="Copy to clipboard" aria-label="Copy to clipboard" tabindex="-1">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        </button>
+      </div>
+      <div class="install-note">Requires Claude Code CLI or Node.js</div>
     </div>
   </div>
 </section>

@@ -4,6 +4,14 @@
 
 ## Installation
 
+### Quick install (npx)
+
+```bash
+npx skills add rajnandan1/such-skills/ss-image-manipulation
+```
+
+### Claude Code (CLI)
+
 ```bash
 claude plugin marketplace add rajnandan1/such-skills
 claude plugin install ss-image-manipulation@such-skills
