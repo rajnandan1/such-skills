@@ -32,7 +32,7 @@ npx shadcn-svelte@latest init
 Run the detection script to verify this is a SvelteKit project with shadcn-svelte and see which components are already installed:
 
 ```bash
-bash <skill-path>/scripts/detect.sh .
+bash "${CLAUDE_SKILL_DIR}/scripts/detect.sh" .
 ```
 
 This will:

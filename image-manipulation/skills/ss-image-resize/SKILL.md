@@ -32,7 +32,7 @@ sudo apt install imagemagick # Debian/Ubuntu
 Run the bundled script:
 
 ```bash
-bash <skill-path>/scripts/resize.sh <input-image> [OPTIONS]
+bash "${CLAUDE_SKILL_DIR}/scripts/resize.sh" <input-image> [OPTIONS]
 ```
 
 ### Options
@@ -76,27 +76,27 @@ The script knows these categories. For the full list of preset names and exact p
 
 **Single platform — OG image for a blog post:**
 ```bash
-bash <skill-path>/scripts/resize.sh hero.png --platform og-image
+bash "${CLAUDE_SKILL_DIR}/scripts/resize.sh" hero.png --platform og-image
 ```
 
 **All YouTube sizes at once:**
 ```bash
-bash <skill-path>/scripts/resize.sh channel-art.png --category youtube --output ./youtube-assets/
+bash "${CLAUDE_SKILL_DIR}/scripts/resize.sh" channel-art.png --category youtube --output ./youtube-assets/
 ```
 
 **Every platform preset from one source image:**
 ```bash
-bash <skill-path>/scripts/resize.sh brand-logo.png --all --output ./all-sizes/
+bash "${CLAUDE_SKILL_DIR}/scripts/resize.sh" brand-logo.png --all --output ./all-sizes/
 ```
 
 **Fit mode (letterbox instead of crop) with black padding:**
 ```bash
-bash <skill-path>/scripts/resize.sh screenshot.png --platform appstore-iphone-15-pro-max --fit --pad-color 000000
+bash "${CLAUDE_SKILL_DIR}/scripts/resize.sh" screenshot.png --platform appstore-iphone-15-pro-max --fit --pad-color 000000
 ```
 
 **List available presets:**
 ```bash
-bash <skill-path>/scripts/resize.sh --list
+bash "${CLAUDE_SKILL_DIR}/scripts/resize.sh" --list
 ```
 
 ## How it works

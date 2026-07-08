@@ -23,23 +23,23 @@ claude plugin install ss-image-manipulation@such-skills
 
 Resize and crop images to exact platform dimensions using ImageMagick's Lanczos resampling. Supports **cover-crop** (fill) and **fit** (letterbox with padding) modes.
 
-**Usage:**
+In a Claude Code session just ask naturally (see [Examples](#examples)) — the skill runs the bundled script for you. To run it by hand from a clone of this repo:
 
 ```bash
 # Single platform
-bash <skill-path>/scripts/resize.sh hero.png --platform og-image
+bash skills/ss-image-resize/scripts/resize.sh hero.png --platform og-image
 
 # All YouTube sizes
-bash <skill-path>/scripts/resize.sh channel-art.png --category youtube
+bash skills/ss-image-resize/scripts/resize.sh channel-art.png --category youtube
 
 # Every platform at once
-bash <skill-path>/scripts/resize.sh brand.png --all --output ./all-sizes/
+bash skills/ss-image-resize/scripts/resize.sh brand.png --all --output ./all-sizes/
 
 # Fit mode with black padding (ideal for screenshots)
-bash <skill-path>/scripts/resize.sh screenshot.png --platform appstore-iphone-15-pro-max --fit --pad-color 000000
+bash skills/ss-image-resize/scripts/resize.sh screenshot.png --platform appstore-iphone-15-pro-max --fit --pad-color 000000
 
 # List all presets
-bash <skill-path>/scripts/resize.sh --list
+bash skills/ss-image-resize/scripts/resize.sh --list
 ```
 
 **Options:**
@@ -47,27 +47,36 @@ bash <skill-path>/scripts/resize.sh --list
 | Flag | Description | Default |
 |------|-------------|---------|
 | `--platform NAME` | Generate for a specific preset | (required unless `--all`) |
-| `--all` | Generate for all 40 presets | off |
+| `--all` | Generate for every preset | off |
 | `--category CAT` | Generate for a category | — |
 | `--output DIR` | Output directory | `./resized/` |
 | `--fit` | Fit inside target with padding | off (cover-crop) |
 | `--pad-color HEX` | Padding color for fit mode (no #) | `FFFFFF` |
 | `--quality N` | Output quality 1-100 | `92` |
 
-**40 Platform Presets:**
+**62 Platform Presets:**
 
 | Category | Presets |
 |----------|---------|
-| **Web / SEO** | og-image (2400x1260), blog-cover (2400x1260), notion-cover (1500x600) |
-| **Chrome Extension** | chrome-screenshot (1280x800), chrome-small-promo (1400x560), chrome-marquee-promo (440x280) |
-| **Ads** | feed-ad (1200x628), post-ad (1200x1200) |
-| **Play Store** | play-icon (512x512), play-feature (1024x500), play-screenshot-5 (1080x1920), play-screenshot-6 (1440x2880) |
-| **App Store** | appstore-iphone-15-pro-max (1284x2778), appstore-iphone-14-plus (1242x2688), appstore-iphone-14-pro (1179x2556), appstore-iphone-14 (1170x2532), appstore-ipad-pro (2048x2732), appstore-mac (2880x1800), appstore-watch-ultra (410x502), appstore-watch-series (396x484) |
-| **YouTube** | youtube-profile (800x800), youtube-cover (2560x1440), youtube-thumbnail (1280x720) |
-| **TikTok** | tiktok-profile (720x720), tiktok-video (1080x1920), tiktok-image-ad (1200x628), tiktok-square-ad (640x640) |
-| **Pinterest** | pinterest-profile (165x165), pinterest-board-cover (800x450), pinterest-square (1000x1000), pinterest-medium (1000x1500), pinterest-long (1000x2100) |
-| **Substack** | substack-featured (1456x1048), substack-logo (256x256), substack-email-banner (1100x220), substack-social (1456x1048), substack-cover (600x600) |
-| **Threads** | threads-profile (320x320), threads-square (1080x1080), threads-carousel (1080x1440) |
+| **Web / SEO** | og-image, blog-cover, notion-cover |
+| **Chrome Extension** | chrome-screenshot, chrome-small-promo, chrome-marquee-promo |
+| **Ads** | feed-ad, post-ad |
+| **Play Store** | play-icon, play-feature, play-screenshot-5, play-screenshot-6 |
+| **App Store** | appstore-iphone-15-pro-max, appstore-iphone-14-plus, appstore-iphone-14-pro, appstore-iphone-14, appstore-ipad-pro, appstore-mac, appstore-watch-ultra, appstore-watch-series |
+| **YouTube** | youtube-profile, youtube-cover, youtube-thumbnail |
+| **TikTok** | tiktok-profile, tiktok-video, tiktok-image-ad, tiktok-square-ad |
+| **Pinterest** | pinterest-profile, pinterest-board-cover, pinterest-square, pinterest-medium, pinterest-long |
+| **Substack** | substack-featured, substack-logo, substack-email-banner, substack-social, substack-cover |
+| **Threads** | threads-profile, threads-square, threads-carousel |
+| **Instagram** | instagram-feed-square, instagram-feed-portrait, instagram-stories, instagram-reels |
+| **Twitter** | twitter-one-image, twitter-two-images, twitter-cover-photo, twitter-og |
+| **Dribbble** | dribbble-shot |
+| **Bluesky** | bluesky-post, bluesky-cover, bluesky-cover-mobile |
+| **Product Hunt** | producthunt-gallery, producthunt-thumbnail |
+| **LinkedIn** | linkedin-feed, linkedin-cover-business, linkedin-cover-personal, linkedin-stories |
+| **Facebook** | facebook-news-feed, facebook-stories, facebook-cover-photo, facebook-og |
+
+Exact pixel dimensions for every preset are in [skills/ss-image-resize/references/platforms.md](skills/ss-image-resize/references/platforms.md), or run the script with `--list`.
 
 ### ss-png-to-svg
 
@@ -77,16 +86,16 @@ Convert raster PNG images into smooth, clean SVG vector files. Traces bitmap ima
 
 ```bash
 # Multi-color logo (default)
-bash <skill-path>/scripts/png2svg.sh logo.png logo.svg
+bash skills/ss-png-to-svg/scripts/png2svg.sh logo.png logo.svg
 
 # Single-color icon
-bash <skill-path>/scripts/png2svg.sh icon.png icon.svg --single-color
+bash skills/ss-png-to-svg/scripts/png2svg.sh icon.png icon.svg --single-color
 
 # Custom color override
-bash <skill-path>/scripts/png2svg.sh icon.png icon.svg --color "#FF5733"
+bash skills/ss-png-to-svg/scripts/png2svg.sh icon.png icon.svg --color "#FF5733"
 
 # Adjust tracing detail
-bash <skill-path>/scripts/png2svg.sh detailed.png --threshold 60 --smoothness 1.0
+bash skills/ss-png-to-svg/scripts/png2svg.sh detailed.png --threshold 60 --smoothness 1.0
 ```
 
 **Options:**
@@ -106,25 +115,25 @@ Convert images between PNG, JPG, WebP, TIFF, BMP, GIF, HEIC, and AVIF. Lossless 
 
 ```bash
 # PNG to JPG
-bash <skill-path>/scripts/convert.sh screenshot.png --to jpg
+bash skills/ss-format-convert/scripts/convert.sh screenshot.png --to jpg
 
 # HEIC to PNG (iPhone photos)
-bash <skill-path>/scripts/convert.sh photo.heic --to png
+bash skills/ss-format-convert/scripts/convert.sh photo.heic --to png
 
 # PNG to WebP with custom quality
-bash <skill-path>/scripts/convert.sh banner.png --to webp --quality 90
+bash skills/ss-format-convert/scripts/convert.sh banner.png --to webp --quality 90
 
 # Batch convert all images in a folder
-bash <skill-path>/scripts/convert.sh --batch ./images/ --to webp --output ./web-images/
+bash skills/ss-format-convert/scripts/convert.sh --batch ./images/ --to webp --output ./web-images/
 
 # Batch convert recursively
-bash <skill-path>/scripts/convert.sh --batch ./photos/ --to jpg --recursive
+bash skills/ss-format-convert/scripts/convert.sh --batch ./photos/ --to jpg --recursive
 
 # Transparent PNG to JPG with black background
-bash <skill-path>/scripts/convert.sh logo.png --to jpg --bg-color 000000
+bash skills/ss-format-convert/scripts/convert.sh logo.png --to jpg --bg-color 000000
 
 # List supported formats
-bash <skill-path>/scripts/convert.sh --formats
+bash skills/ss-format-convert/scripts/convert.sh --formats
 ```
 
 **Options:**
@@ -186,7 +195,7 @@ I need YouTube assets — profile, cover, and thumbnail from this channel-art.pn
 resize screenshot.png for all App Store iPhone sizes, use fit mode with black padding
 ```
 ```
-generate all 60 platform sizes from brand-logo.png
+generate every platform size from brand-logo.png
 ```
 ```
 convert my company logo.png to a scalable SVG
