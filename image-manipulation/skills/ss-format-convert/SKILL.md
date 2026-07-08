@@ -31,7 +31,7 @@ sudo apt install imagemagick # Debian/Ubuntu
 Run the bundled script:
 
 ```bash
-bash <skill-path>/scripts/convert.sh <input-image> --to FORMAT [OPTIONS]
+bash "${CLAUDE_SKILL_DIR}/scripts/convert.sh" <input-image> --to FORMAT [OPTIONS]
 ```
 
 ### Options
@@ -65,37 +65,37 @@ For the full reference with alpha support, lossy/lossless details, and conversio
 
 **Convert PNG to JPG:**
 ```bash
-bash <skill-path>/scripts/convert.sh screenshot.png --to jpg
+bash "${CLAUDE_SKILL_DIR}/scripts/convert.sh" screenshot.png --to jpg
 ```
 
 **Convert HEIC photos to PNG:**
 ```bash
-bash <skill-path>/scripts/convert.sh photo.heic --to png
+bash "${CLAUDE_SKILL_DIR}/scripts/convert.sh" photo.heic --to png
 ```
 
 **Convert to WebP for web optimization:**
 ```bash
-bash <skill-path>/scripts/convert.sh banner.png --to webp --quality 90
+bash "${CLAUDE_SKILL_DIR}/scripts/convert.sh" banner.png --to webp --quality 90
 ```
 
 **Batch convert all images in a folder to WebP:**
 ```bash
-bash <skill-path>/scripts/convert.sh --batch ./images/ --to webp --output ./web-images/
+bash "${CLAUDE_SKILL_DIR}/scripts/convert.sh" --batch ./images/ --to webp --output ./web-images/
 ```
 
 **Batch convert recursively:**
 ```bash
-bash <skill-path>/scripts/convert.sh --batch ./photos/ --to jpg --recursive --output ./exported/
+bash "${CLAUDE_SKILL_DIR}/scripts/convert.sh" --batch ./photos/ --to jpg --recursive --output ./exported/
 ```
 
 **Transparent PNG to JPG with custom background:**
 ```bash
-bash <skill-path>/scripts/convert.sh logo.png --to jpg --bg-color 000000
+bash "${CLAUDE_SKILL_DIR}/scripts/convert.sh" logo.png --to jpg --bg-color 000000
 ```
 
 **List supported formats:**
 ```bash
-bash <skill-path>/scripts/convert.sh --formats
+bash "${CLAUDE_SKILL_DIR}/scripts/convert.sh" --formats
 ```
 
 ## How it works

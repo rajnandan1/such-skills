@@ -1,0 +1,32 @@
+{
+    "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+    "name": "ss-svg-animations",
+    "version": "1.0.0",
+    "description": "Hand-crafted, dependency-free SVG animation: self-drawing paths, loading spinners, morphing shapes, motion paths, animated gradients, and complex layered scenes with particles and parallax — with the right technique (CSS vs SMIL) chosen for where the SVG will live (inline, <img>, CSS background, GitHub README).",
+    "author": {
+        "name": "Raj Nandan Sharma",
+        "url": "https://rajnandan.com",
+        "email": "rajnandan1@gmail.com"
+    },
+    "homepage": "https://github.com/rajnandan1/such-skills/tree/main/svg-animations",
+    "repository": "https://github.com/rajnandan1/such-skills",
+    "license": "MIT",
+    "keywords": [
+        "svg",
+        "animation",
+        "smil",
+        "css-animation",
+        "stroke-dasharray",
+        "pathLength",
+        "path-drawing",
+        "morphing",
+        "motion-path",
+        "spinner",
+        "loader",
+        "animated-logo",
+        "animated-icon",
+        "gradients",
+        "accessibility",
+        "prefers-reduced-motion"
+    ]
+}

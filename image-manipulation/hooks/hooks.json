@@ -1,5 +1,4 @@
 {
-  "description": "Validates image resize and format conversion output after resize.sh or convert.sh runs",
   "hooks": {
     "PostToolUse": [
       {
@@ -7,12 +6,12 @@
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/validate-resize.sh",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}\"/hooks/validate-resize.sh",
             "timeout": 30
           },
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/validate-conversion.sh",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}\"/hooks/validate-conversion.sh",
             "timeout": 30
           }
         ]

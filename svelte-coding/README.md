@@ -32,9 +32,11 @@ Detects whether your project is a SvelteKit app with shadcn-svelte installed, li
 
 **Usage:**
 
+In a Claude Code session just ask naturally (see [Examples](#examples)) — the skill runs the bundled detection script for you. To run it by hand from a clone of this repo:
+
 ```bash
 # Detect project setup and list installed components
-bash <skill-path>/scripts/detect.sh .
+bash skills/ss-shadcn-svelte/scripts/detect.sh .
 ```
 
 **Available components:**

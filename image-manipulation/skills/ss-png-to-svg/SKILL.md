@@ -28,7 +28,7 @@ brew install imagemagick potrace
 There's a bundled script at `scripts/png2svg.sh` that handles the full pipeline. Run it directly:
 
 ```bash
-bash <skill-path>/scripts/png2svg.sh <input.png> [output.svg] [OPTIONS]
+bash "${CLAUDE_SKILL_DIR}/scripts/png2svg.sh" <input.png> [output.svg] [OPTIONS]
 ```
 
 ### Options
@@ -44,22 +44,22 @@ bash <skill-path>/scripts/png2svg.sh <input.png> [output.svg] [OPTIONS]
 
 **Simple single-color logo:**
 ```bash
-bash <skill-path>/scripts/png2svg.sh logo.png logo.svg --single-color
+bash "${CLAUDE_SKILL_DIR}/scripts/png2svg.sh" logo.png logo.svg --single-color
 ```
 
 **Multi-color illustration (default):**
 ```bash
-bash <skill-path>/scripts/png2svg.sh artwork.png artwork.svg
+bash "${CLAUDE_SKILL_DIR}/scripts/png2svg.sh" artwork.png artwork.svg
 ```
 
 **Override color:**
 ```bash
-bash <skill-path>/scripts/png2svg.sh icon.png icon.svg --color "#FF5733"
+bash "${CLAUDE_SKILL_DIR}/scripts/png2svg.sh" icon.png icon.svg --color "#FF5733"
 ```
 
 **Adjust for detailed images:**
 ```bash
-bash <skill-path>/scripts/png2svg.sh detailed.png --threshold 60 --smoothness 1.0
+bash "${CLAUDE_SKILL_DIR}/scripts/png2svg.sh" detailed.png --threshold 60 --smoothness 1.0
 ```
 
 ## What the script does
