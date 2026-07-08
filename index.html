@@ -6,7 +6,7 @@
         <title>Such Skills — Claude Code Plugins</title>
         <meta
             name="description"
-            content="A collection of Claude Code plugins for image manipulation, Svelte development, and more."
+            content="A collection of Claude Code plugins for image manipulation, SVG animation, Svelte development, and more."
         />
         <link rel="icon" type="image/png" href="favicon.png" />
         <link rel="preload" as="image" href="hero.webp" />
@@ -84,13 +84,14 @@
                     />
                 </div>
                 <div class="hero-badge">
-                    <span class="dot" aria-hidden="true"></span> v1.2.0 &middot;
+                    <span class="dot" aria-hidden="true"></span> v1.3.0 &middot;
                     MIT Licensed
                 </div>
                 <h1 id="hero-title"><span class="grad">Such Skills</span></h1>
                 <p>
                     A collection of Claude Code plugins for image manipulation,
-                    Svelte development, and more. Built by Raj Nandan Sharma.
+                    SVG animation, Svelte development, and more. Built by Raj
+                    Nandan Sharma.
                 </p>
                 <div class="hero-actions">
                     <a href="#install" class="btn btn-primary">
@@ -114,11 +115,11 @@
                 </div>
                 <div class="hero-stats" role="list" aria-label="Project stats">
                     <div class="stat" role="listitem">
-                        <div class="stat-num">2</div>
+                        <div class="stat-num">3</div>
                         <div class="stat-label">Plugins</div>
                     </div>
                     <div class="stat" role="listitem">
-                        <div class="stat-num">4</div>
+                        <div class="stat-num">5</div>
                         <div class="stat-label">Skills</div>
                     </div>
                     <div class="stat" role="listitem">
@@ -137,7 +138,7 @@
                 <div class="section-inner">
                     <div class="section-label color-blue">Plugins</div>
                     <h2 id="plugins-title" class="section-title reveal">
-                        Two powerful plugins,<br />zero configuration.
+                        Three powerful plugins,<br />zero configuration.
                     </h2>
                     <p class="section-desc reveal">
                         Each plugin bundles related skills, shell scripts, and
@@ -180,7 +181,7 @@
                                 <div class="plugin-meta">
                                     <span class="plugin-tag">3 Skills</span>
                                     <span class="plugin-tag">2 Hooks</span>
-                                    <span class="plugin-tag">v1.1.2</span>
+                                    <span class="plugin-tag">v1.2.0</span>
                                     <span class="plugin-tag">utilities</span>
                                 </div>
                             </div>
@@ -213,8 +214,43 @@
                                 </p>
                                 <div class="plugin-meta">
                                     <span class="plugin-tag">1 Skill</span>
-                                    <span class="plugin-tag">v1.0.0</span>
+                                    <span class="plugin-tag">v1.1.0</span>
                                     <span class="plugin-tag">frameworks</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article
+                            class="plugin-card anim reveal"
+                            style="--stagger: 2"
+                        >
+                            <div class="plugin-card-inner">
+                                <div class="plugin-icon" aria-hidden="true">
+                                    <svg
+                                        width="24"
+                                        height="24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <circle cx="5" cy="19" r="2" />
+                                        <path
+                                            d="M7 17c4-2 5-6 5-9m0 0h7m-7 0 3-3m-3 3 3 3"
+                                        />
+                                    </svg>
+                                </div>
+                                <h3>ss-svg-animations</h3>
+                                <p class="plugin-desc">
+                                    Hand-crafted, dependency-free SVG animation
+                                    — self-drawing paths, spinners, morphing,
+                                    motion paths, and complex layered scenes
+                                    with particles and parallax.
+                                </p>
+                                <div class="plugin-meta">
+                                    <span class="plugin-tag">1 Skill</span>
+                                    <span class="plugin-tag">v1.0.0</span>
+                                    <span class="plugin-tag">design</span>
                                 </div>
                             </div>
                         </article>
@@ -227,7 +263,7 @@
                 <div class="section-inner">
                     <div class="section-label color-img">Skills</div>
                     <h2 id="skills-title" class="section-title reveal">
-                        Four skills. Infinite possibilities.
+                        Five skills. Infinite possibilities.
                     </h2>
                     <p class="section-desc reveal">
                         Each skill is a focused tool that Claude Code can invoke
@@ -363,6 +399,40 @@
                                 >
                             </div>
                         </article>
+
+                        <article class="skill-card reveal" style="--stagger: 4">
+                            <div class="skill-card-inner">
+                                <span class="skill-icon" aria-hidden="true"
+                                    ><svg
+                                        width="20"
+                                        height="20"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.5"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            d="M12 3v3m6.36-.36-2.12 2.12M21 12h-3m.36 6.36-2.12-2.12M12 21v-3m-6.36.36 2.12-2.12M3 12h3m-.36-6.36 2.12 2.12"
+                                        />
+                                        <circle cx="12" cy="12" r="3" /></svg
+                                ></span>
+                                <h4>ss-animate-svg</h4>
+                                <p>
+                                    Create hand-crafted animated SVGs —
+                                    self-drawing paths, spinners, morphing
+                                    shapes, and layered scenes with particles
+                                    and parallax. No JS libraries needed.
+                                </p>
+                                <ul class="skill-features">
+                                    <li>CSS or SMIL, picked per context</li>
+                                    <li>Works in README &amp; img tags</li>
+                                    <li>Reduced-motion safe</li>
+                                </ul>
+                                <span class="skill-parent anim"
+                                    >ss-svg-animations</span
+                                >
+                            </div>
+                        </article>
                     </div>
                 </div>
             </section>
@@ -459,6 +529,13 @@
                                 >/ss-svelte-coding:ss-shadcn-svelte</code
                             >
                         </div>
+                        <div class="usage-card">
+                            <div class="usage-label">Animate an SVG</div>
+                            <code class="usage-cmd"
+                                >/ss-svg-animations:ss-animate-svg animated
+                                checkmark for my README</code
+                            >
+                        </div>
                     </div>
                 </div>
             </section>
@@ -499,6 +576,22 @@
                             <span class="cmd-text"
                                 >npx skills add
                                 rajnandan1/such-skills/ss-svelte-coding</span
+                            >
+                            <span
+                                class="copy-indicator"
+                                aria-hidden="true"
+                            ></span>
+                        </div>
+                        <div
+                            class="install-cmd"
+                            role="button"
+                            tabindex="0"
+                            aria-label="Copy npx install command for ss-svg-animations"
+                        >
+                            <span class="prompt" aria-hidden="true">$</span>
+                            <span class="cmd-text"
+                                >npx skills add
+                                rajnandan1/such-skills/ss-svg-animations</span
                             >
                             <span
                                 class="copy-indicator"
@@ -554,6 +647,22 @@
                                 aria-hidden="true"
                             ></span>
                         </div>
+                        <div
+                            class="install-cmd"
+                            role="button"
+                            tabindex="0"
+                            aria-label="Copy install command for ss-svg-animations"
+                        >
+                            <span class="prompt" aria-hidden="true">$</span>
+                            <span class="cmd-text"
+                                >claude plugin install
+                                ss-svg-animations@such-skills</span
+                            >
+                            <span
+                                class="copy-indicator"
+                                aria-hidden="true"
+                            ></span>
+                        </div>
                         <div class="install-method-label">Update</div>
                         <div
                             class="install-cmd"
@@ -597,6 +706,22 @@
                             <span class="cmd-text"
                                 >claude plugin update
                                 ss-svelte-coding@such-skills</span
+                            >
+                            <span
+                                class="copy-indicator"
+                                aria-hidden="true"
+                            ></span>
+                        </div>
+                        <div
+                            class="install-cmd"
+                            role="button"
+                            tabindex="0"
+                            aria-label="Copy update command for ss-svg-animations"
+                        >
+                            <span class="prompt" aria-hidden="true">$</span>
+                            <span class="cmd-text"
+                                >claude plugin update
+                                ss-svg-animations@such-skills</span
                             >
                             <span
                                 class="copy-indicator"

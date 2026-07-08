@@ -18,6 +18,8 @@
     --accent-img-dim: #d4789e14;
     --accent-svelte: #e0602e;
     --accent-svelte-dim: #e0602e14;
+    --accent-anim: #9d7bd8;
+    --accent-anim-dim: #9d7bd814;
     --accent-blue: #7ba8d4;
     --accent-green: #4dd89a;
     --radius: 12px;
@@ -508,6 +510,16 @@ section {
         0 0 48px rgba(224, 96, 46, 0.08);
     transform: scale(1.05);
 }
+.plugin-card.anim .plugin-icon {
+    background: var(--accent-anim-dim);
+    color: var(--accent-anim);
+}
+.plugin-card.anim:hover .plugin-icon {
+    box-shadow:
+        0 0 24px var(--accent-anim-dim),
+        0 0 48px rgba(157, 123, 216, 0.08);
+    transform: scale(1.05);
+}
 .plugin-card h3 {
     font-size: 1.3rem;
     font-weight: 400;
@@ -612,6 +624,10 @@ section {
 .skill-parent.svelte {
     background: var(--accent-svelte-dim);
     color: var(--accent-svelte);
+}
+.skill-parent.anim {
+    background: var(--accent-anim-dim);
+    color: var(--accent-anim);
 }
 .skill-features {
     list-style: none;

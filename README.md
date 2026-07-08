@@ -9,6 +9,7 @@
 ```bash
 npx skills add rajnandan1/such-skills/ss-image-manipulation
 npx skills add rajnandan1/such-skills/ss-svelte-coding
+npx skills add rajnandan1/such-skills/ss-svg-animations
 ```
 
 ### Claude Code (CLI)
@@ -20,6 +21,7 @@ claude plugin marketplace add rajnandan1/such-skills
 # Step 2: Install plugins
 claude plugin install ss-image-manipulation@such-skills
 claude plugin install ss-svelte-coding@such-skills
+claude plugin install ss-svg-animations@such-skills
 ```
 
 ## Update to latest version
@@ -28,6 +30,7 @@ claude plugin install ss-svelte-coding@such-skills
 claude plugin marketplace update such-skills
 claude plugin update ss-image-manipulation@such-skills
 claude plugin update ss-svelte-coding@such-skills
+claude plugin update ss-svg-animations@such-skills
 ```
 
 ## Plugins
@@ -36,6 +39,7 @@ claude plugin update ss-svelte-coding@such-skills
 | --------------------------------------------- | ------ | --------------------------------------------------------------------------------------------- |
 | [**ss-image-manipulation**](image-manipulation/) | `ss-png-to-svg`, `ss-image-resize`, `ss-format-convert` | PNG-to-SVG conversion, platform-aware image resizing (60+ presets), lossless format conversion (PNG, JPG, WebP, TIFF, BMP, GIF, HEIC, AVIF), plus PostToolUse hooks that validate every resize and conversion |
 | [**ss-svelte-coding**](svelte-coding/) | `ss-shadcn-svelte` | shadcn-svelte component detection and documentation for building accessible UIs in SvelteKit projects |
+| [**ss-svg-animations**](svg-animations/) | `ss-animate-svg` | Hand-crafted, dependency-free SVG animation — self-drawing paths, spinners, morphing, motion paths, complex layered scenes with particles and parallax — with the right technique (CSS vs SMIL) for where the SVG will live |
 
 Once installed, Claude invokes the skills automatically when relevant, or you can call one directly, e.g. `/ss-image-manipulation:ss-image-resize`. Each plugin's README documents its skills, options, and example prompts; changes are tracked in each plugin's `CHANGELOG.md`.
 
@@ -49,9 +53,12 @@ such-skills/
 │   ├── .claude-plugin/plugin.json
 │   ├── skills/                 # ss-png-to-svg, ss-image-resize, ss-format-convert
 │   └── hooks/                  # Output-validation hooks
-└── svelte-coding/              # ss-svelte-coding plugin
+├── svelte-coding/              # ss-svelte-coding plugin
+│   ├── .claude-plugin/plugin.json
+│   └── skills/                 # ss-shadcn-svelte
+└── svg-animations/             # ss-svg-animations plugin
     ├── .claude-plugin/plugin.json
-    └── skills/                 # ss-shadcn-svelte
+    └── skills/                 # ss-animate-svg (+ bundled references)
 ```
 
 ## Development

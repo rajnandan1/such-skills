@@ -19,6 +19,12 @@
             "description": "Svelte development tools: shadcn-svelte component detection and documentation for building accessible UIs in SvelteKit projects.",
             "source": "./svelte-coding",
             "category": "frameworks"
+        },
+        {
+            "name": "ss-svg-animations",
+            "description": "Hand-crafted, dependency-free SVG animation: self-drawing paths, loading spinners, morphing shapes, motion paths, animated gradients, and complex layered scenes with particles and parallax — with the right technique (CSS vs SMIL) chosen for where the SVG will live.",
+            "source": "./svg-animations",
+            "category": "design"
         }
     ]
 }
