@@ -213,7 +213,7 @@ section {
 }
 #registry,
 #use,
-#install {
+#update {
     max-width: 1060px;
     margin: 0 auto;
 }
@@ -389,20 +389,6 @@ h2 {
     margin-top: 14px;
 }
 
-/* ---- INSTALL ---- */
-.install-note {
-    margin-top: 22px;
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--ink-dim);
-    max-width: 62ch;
-}
-.install-note code {
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    color: var(--ink);
-}
-
 /* ---- FOOTER ---- */
 footer {
     margin-top: clamp(40px, 7vh, 80px);
@@ -507,7 +493,10 @@ footer a {
     }
 }
 @media (max-width: 480px) {
-    .site-head nav a:not([href="#install"]) {
+    .site-head nav a:not([href="#update"]) {
         display: none;
     }
+}
+.mt-4 {
+    margin-top: 1rem;
 }
