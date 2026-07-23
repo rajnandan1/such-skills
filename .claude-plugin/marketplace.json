@@ -1,6 +1,6 @@
 {
     "name": "such-skills",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "description": "A collection of useful Claude Code skills and plugins built by Raj Nandan Sharma.",
     "owner": {
         "name": "Raj Nandan Sharma",
@@ -25,6 +25,12 @@
             "description": "Hand-crafted, dependency-free SVG animation: self-drawing paths, loading spinners, morphing shapes, motion paths, animated gradients, and complex layered scenes with particles and parallax — with the right technique (CSS vs SMIL) chosen for where the SVG will live.",
             "source": "./svg-animations",
             "category": "design"
+        },
+        {
+            "name": "ss-no-slop",
+            "description": "Remove AI slop from prose: edit drafts into sharper, more human writing while preserving the writer's voice, detect and name AI patterns in a text without rewriting it, or draft new prose with no AI tells — 30+ patterns caught, from binary contrasts and colon reveals to false agency and fake-profound kickers. Ships an always-on SessionStart hook that applies the rules to every session with zero setup.",
+            "source": "./no-slop",
+            "category": "writing"
         }
     ]
 }

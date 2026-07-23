@@ -1,0 +1,28 @@
+{
+    "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+    "name": "ss-no-slop",
+    "version": "1.0.0",
+    "description": "Remove AI slop from prose: edit drafts into sharper, more human writing while preserving the writer's voice, detect and name AI patterns in a text without rewriting it, or draft new prose with no AI tells. Catches 30+ patterns: filler phrases, binary contrasts, false agency, colon reveals, importance puffery, fake-profound kickers, robotic rhythm, and more.",
+    "author": {
+        "name": "Raj Nandan Sharma",
+        "url": "https://rajnandan.com",
+        "email": "rajnandan1@gmail.com"
+    },
+    "homepage": "https://github.com/rajnandan1/such-skills/tree/main/no-slop",
+    "repository": "https://github.com/rajnandan1/such-skills",
+    "license": "MIT",
+    "keywords": [
+        "writing",
+        "editing",
+        "prose",
+        "ai-slop",
+        "slop",
+        "copyediting",
+        "voice",
+        "style",
+        "humanize",
+        "ai-detection",
+        "drafting",
+        "copywriting"
+    ]
+}

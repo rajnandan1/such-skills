@@ -6,7 +6,7 @@
         <title>Such Skills — Claude Code Plugins</title>
         <meta
             name="description"
-            content="A collection of Claude Code plugins for image manipulation, SVG animation, Svelte development, and more."
+            content="A collection of Claude Code plugins for image manipulation, SVG animation, Svelte development, slop-free writing, and more."
         />
         <link rel="icon" type="image/png" href="favicon.png" />
         <link rel="preload" as="image" href="hero.webp" />
@@ -84,14 +84,14 @@
                     />
                 </div>
                 <div class="hero-badge">
-                    <span class="dot" aria-hidden="true"></span> v1.3.0 &middot;
+                    <span class="dot" aria-hidden="true"></span> v1.4.0 &middot;
                     MIT Licensed
                 </div>
                 <h1 id="hero-title"><span class="grad">Such Skills</span></h1>
                 <p>
                     A collection of Claude Code plugins for image manipulation,
-                    SVG animation, Svelte development, and more. Built by Raj
-                    Nandan Sharma.
+                    SVG animation, Svelte development, slop-free writing, and
+                    more. Built by Raj Nandan Sharma.
                 </p>
                 <div class="hero-actions">
                     <a href="#install" class="btn btn-primary">
@@ -115,11 +115,11 @@
                 </div>
                 <div class="hero-stats" role="list" aria-label="Project stats">
                     <div class="stat" role="listitem">
-                        <div class="stat-num">3</div>
+                        <div class="stat-num">4</div>
                         <div class="stat-label">Plugins</div>
                     </div>
                     <div class="stat" role="listitem">
-                        <div class="stat-num">5</div>
+                        <div class="stat-num">6</div>
                         <div class="stat-label">Skills</div>
                     </div>
                     <div class="stat" role="listitem">
@@ -138,7 +138,7 @@
                 <div class="section-inner">
                     <div class="section-label color-blue">Plugins</div>
                     <h2 id="plugins-title" class="section-title reveal">
-                        Three powerful plugins,<br />zero configuration.
+                        Four powerful plugins,<br />zero configuration.
                     </h2>
                     <p class="section-desc reveal">
                         Each plugin bundles related skills, shell scripts, and
@@ -254,6 +254,41 @@
                                 </div>
                             </div>
                         </article>
+
+                        <article
+                            class="plugin-card write reveal"
+                            style="--stagger: 3"
+                        >
+                            <div class="plugin-card-inner">
+                                <div class="plugin-icon" aria-hidden="true">
+                                    <svg
+                                        width="24"
+                                        height="24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"
+                                        />
+                                    </svg>
+                                </div>
+                                <h3>ss-no-slop</h3>
+                                <p class="plugin-desc">
+                                    Remove AI slop from prose: voice-preserving
+                                    draft editing, detect-without-rewriting
+                                    audits, and clean fresh drafting. Catches
+                                    30+ AI writing patterns.
+                                </p>
+                                <div class="plugin-meta">
+                                    <span class="plugin-tag">1 Skill</span>
+                                    <span class="plugin-tag">1 Hook</span>
+                                    <span class="plugin-tag">v1.0.0</span>
+                                    <span class="plugin-tag">writing</span>
+                                </div>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </section>
@@ -263,7 +298,7 @@
                 <div class="section-inner">
                     <div class="section-label color-img">Skills</div>
                     <h2 id="skills-title" class="section-title reveal">
-                        Five skills. Infinite possibilities.
+                        Six skills. Infinite possibilities.
                     </h2>
                     <p class="section-desc reveal">
                         Each skill is a focused tool that Claude Code can invoke
@@ -433,6 +468,39 @@
                                 >
                             </div>
                         </article>
+
+                        <article class="skill-card reveal" style="--stagger: 5">
+                            <div class="skill-card-inner">
+                                <span class="skill-icon" aria-hidden="true"
+                                    ><svg
+                                        width="20"
+                                        height="20"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.5"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"
+                                        /></svg
+                                ></span>
+                                <h4>ss-remove-slop</h4>
+                                <p>
+                                    Edit drafts into sharper, more human
+                                    writing while preserving the writer's
+                                    voice, or detect and name AI patterns
+                                    without rewriting.
+                                </p>
+                                <ul class="skill-features">
+                                    <li>30+ slop patterns caught</li>
+                                    <li>Voice-preserving edits</li>
+                                    <li>Self-checked with scoring</li>
+                                </ul>
+                                <span class="skill-parent write"
+                                    >ss-no-slop</span
+                                >
+                            </div>
+                        </article>
                     </div>
                 </div>
             </section>
@@ -536,6 +604,13 @@
                                 checkmark for my README</code
                             >
                         </div>
+                        <div class="usage-card">
+                            <div class="usage-label">Remove AI slop</div>
+                            <code class="usage-cmd"
+                                >/ss-no-slop:ss-remove-slop edit this draft, it
+                                sounds too AI</code
+                            >
+                        </div>
                     </div>
                 </div>
             </section>
@@ -592,6 +667,22 @@
                             <span class="cmd-text"
                                 >npx skills add
                                 rajnandan1/such-skills/ss-svg-animations</span
+                            >
+                            <span
+                                class="copy-indicator"
+                                aria-hidden="true"
+                            ></span>
+                        </div>
+                        <div
+                            class="install-cmd"
+                            role="button"
+                            tabindex="0"
+                            aria-label="Copy npx install command for ss-no-slop"
+                        >
+                            <span class="prompt" aria-hidden="true">$</span>
+                            <span class="cmd-text"
+                                >npx skills add
+                                rajnandan1/such-skills/ss-no-slop</span
                             >
                             <span
                                 class="copy-indicator"
@@ -663,6 +754,22 @@
                                 aria-hidden="true"
                             ></span>
                         </div>
+                        <div
+                            class="install-cmd"
+                            role="button"
+                            tabindex="0"
+                            aria-label="Copy install command for ss-no-slop"
+                        >
+                            <span class="prompt" aria-hidden="true">$</span>
+                            <span class="cmd-text"
+                                >claude plugin install
+                                ss-no-slop@such-skills</span
+                            >
+                            <span
+                                class="copy-indicator"
+                                aria-hidden="true"
+                            ></span>
+                        </div>
                         <div class="install-method-label">Update</div>
                         <div
                             class="install-cmd"
@@ -722,6 +829,22 @@
                             <span class="cmd-text"
                                 >claude plugin update
                                 ss-svg-animations@such-skills</span
+                            >
+                            <span
+                                class="copy-indicator"
+                                aria-hidden="true"
+                            ></span>
+                        </div>
+                        <div
+                            class="install-cmd"
+                            role="button"
+                            tabindex="0"
+                            aria-label="Copy update command for ss-no-slop"
+                        >
+                            <span class="prompt" aria-hidden="true">$</span>
+                            <span class="cmd-text"
+                                >claude plugin update
+                                ss-no-slop@such-skills</span
                             >
                             <span
                                 class="copy-indicator"
