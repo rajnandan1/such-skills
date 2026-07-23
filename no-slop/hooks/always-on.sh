@@ -27,5 +27,5 @@ body=$(awk '
   !in_fm                              { print }
 ' "$skill_path") || exit 0
 
-printf 'NO SLOP MODE ACTIVE (always-on). Apply the Draft job below to all prose you write this session: explanations, summaries, docs, READMEs, commit messages, UI copy. The Edit and Detect jobs and the "What to ask for" questions apply only when the user shares a draft or asks for an audit; never ask for a draft otherwise. Reference files live next to the skill at %s. "stop slop mode" turns this off for the session; create %s to turn always-on off for good.\n\n%s\n' \
-  "$skill_path" "$off_path" "$body"
+printf 'NO SLOP MODE ACTIVE (always-on). Apply the Draft job below to all prose you write this session: explanations, summaries, docs, READMEs, commit messages, UI copy. The Edit and Detect jobs and the "What to ask for" questions apply only when the user shares a draft or asks for an audit; never ask for a draft otherwise. Reference files live next to the skill at %s. "stop slop mode" turns this off for the session; create %s to turn always-on off for good. Optional: a statusline badge script ships at %s/no-slop-statusline.sh. If the user asks to see slop mode in their status line, wire that script into the statusLine command in their settings.json (compose it with any existing statusline; the script prints nothing when opted out).\n\n%s\n' \
+  "$skill_path" "$off_path" "$script_dir" "$body"
